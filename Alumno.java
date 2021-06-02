@@ -1,5 +1,7 @@
 import java.util.Scanner;
 import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 
 public class Alumno extends Persona {
     private int boleta, semestre;
@@ -14,6 +16,12 @@ public class Alumno extends Persona {
     }
     // private ArrayList<MatriaInscrita> matrias= new ArrayList<MateriaInscrita>();
 
+    public Alumno(){
+        pideleAlUsuarioTusDatos();
+        boleta = generaBoleta();
+        AlmacenaAlumno(this);
+    }
+
     public Alumno(String nombre, String APaterno, int edad, String nacionalidad, String fechaNacimiento, String genero, String Carrera, int semestre, double creditos, double promediogeneral) {
         super(nombre, APaterno, edad, nacionalidad, fechaNacimiento, genero);
         this.Carrera = Carrera;
@@ -25,7 +33,7 @@ public class Alumno extends Persona {
     }
 
 
-
+    @Override
     public void pideleAlUsuarioTusDatos() {
         super.pideleAlUsuarioTusDatos();
         Scanner scanner = new Scanner(System.in);
@@ -42,6 +50,7 @@ public class Alumno extends Persona {
         scanner.close();
     }
 
+    @Override
     public void muestraTusDatos() {
         super.muestraTusDatos();
         System.out.println("Boleta: " + this.boleta);
@@ -51,6 +60,7 @@ public class Alumno extends Persona {
         System.out.println("Semestre actual: " + this.semestre);
     }
 
+    @Override
     public String toString() {
         return super.toString() + "\nBoleta: " + this.boleta + "\nCarrera: " + this.Carrera + "\nPrmedio general: "
                 + this.promedioGeneral + "\nNo. de Creditos: " + this.creditos + "\nSemestre Actual: " + this.semestre;
@@ -102,6 +112,23 @@ public class Alumno extends Persona {
 
     public static void AlmacenaAlumno(Alumno nuevo){
         ListaAlumnos.put(nuevo.boleta, nuevo);
+    }
+
+    public static void EliminaAlumno(int boleta){
+        Alumno alumnoBorrar = ListaAlumnos.get(boleta);
+        if(alumnoBorrar != null)
+            ListaAlumnos.remove(boleta);
+        else
+            System.out.println("Boleta no encontrada");
+    }
+
+    public static void Lista(){
+        Iterator iterador = ListaAlumnos.entrySet().iterator();
+        while(iterador.hasNext()){
+            Map.Entry par = (Map.Entry)iterador.next();
+            Alumno A = (Alumno)  par.getValue();
+            System.out.println(A);
+        }
     }
 
 }

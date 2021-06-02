@@ -1,6 +1,8 @@
 import java.util.ArrayList;
 import java.util.List;
 import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 
 public class Curso {
     
@@ -39,6 +41,7 @@ public class Curso {
     public void setCupo(int cupo) {
         this.cupo = cupo;
     }
+
     public Materia getMateria() {
         return materia;
     }
@@ -66,6 +69,28 @@ public class Curso {
 
     public void AgregaAlumno(Inscripcion nuevo){
         alumnosInscritos.add(nuevo);
+    }
+
+    public String toString(){
+        String info;
+        info = "Curso: " + ID_curso + "\tMateria: " + materia + "\tProfesor: " +  profesor + "\nCupo restante: " + cupo + "\n";
+        return info;
+    }
+    public String listaInscritos(){
+        String info = "";
+        for (Inscripcion inscripcion : alumnosInscritos) {
+            info += inscripcion + "\n";
+        }
+        return info;
+    }
+
+    public static void Lista(){
+        Iterator iterador = ListaCursos.entrySet().iterator();
+        while(iterador.hasNext()){
+            Map.Entry par = (Map.Entry)iterador.next();
+            Curso A = (Curso)  par.getValue();
+            System.out.println(A);
+        }
     }
 
 }

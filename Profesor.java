@@ -1,5 +1,7 @@
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 
 public class Profesor extends Empleado{
     private ArrayList<Curso> CursosAcargo;
@@ -20,7 +22,6 @@ public class Profesor extends Empleado{
 
     public void nuestraTusDatos(){
         super.muestraTusDatos();
-        System.out.println("Cursos: " + CursosAcargo.toString());
     }
 
     public String dameTusCursos(){
@@ -28,11 +29,32 @@ public class Profesor extends Empleado{
     }
 
     public static void AlmacenaProfesores(Profesor nuevo){
-        ListaProfesores.put(nuevo.getNumeroEmp(), nuevo);
+        ListaProfesores.put(nuevo.numeroEmp, nuevo);
     }
 
     public static Profesor getProf(int numE){
         return ListaProfesores.get(numE);
+    }
+    public static void EliminaAlumno(int numE){
+        Profesor profesorBorrar = ListaProfesores.get(numE);
+        if(profesorBorrar != null)
+            ListaProfesores.remove(numE);
+        else
+            System.out.println("Boleta no encontrada");
+    }
+    public static void Lista(){
+        Iterator iterador = ListaProfesores.entrySet().iterator();
+        while(iterador.hasNext()){
+            Map.Entry par = (Map.Entry)iterador.next();
+            Profesor A = (Profesor)  par.getValue();
+            System.out.println(A);
+        }
+    }
+    public void gruposAcargo(){
+
+        for (Curso curso : CursosAcargo) {
+            System.out.println(curso);
+        }
     }
 
 }

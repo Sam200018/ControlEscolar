@@ -19,4 +19,10 @@ public class Inscripcion {
     public void setCurso(Curso curso) {
         this.curso = curso;
     }
+
+    public String toString(){
+        String info;
+        info = alumno.toString() + "\n";
+        return info;
+    }
 }

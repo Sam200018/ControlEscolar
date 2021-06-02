@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class Empleado extends Persona {
-    private int numeroEmp;
+    protected int numeroEmp;
     private double sueldo;
     private String Puesto;
     private static int size;
