@@ -34,7 +34,7 @@ public class Empleado extends Persona {
         this.sueldo = Double.parseDouble(scanner.nextLine());
         System.out.println("Ingrese el puesto de empleado");
         this.Puesto = scanner.nextLine();
-        scanner.close();
+        
     }
 
     public void muestraTusDatos() {

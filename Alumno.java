@@ -14,8 +14,7 @@ public class Alumno extends Persona {
     static{
         ListaAlumnos = new HashMap<>();
     }
-    // private ArrayList<MatriaInscrita> matrias= new ArrayList<MateriaInscrita>();
-
+    
     public Alumno(){
         pideleAlUsuarioTusDatos();
         boleta = generaBoleta();

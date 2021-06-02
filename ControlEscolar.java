@@ -97,7 +97,7 @@ public class ControlEscolar {
                                 System.out.println("Obtener profesor");
                                 System.out.println("Ingresa número de empleado: ");
                                 numEmp = op.nextInt();
-                                Profesor.getProf(numEmp);
+                                System.out.println(Profesor.getProf(numEmp));
                                 break;
 
                             case 5:
