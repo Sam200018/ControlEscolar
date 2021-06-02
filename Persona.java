@@ -95,13 +95,4 @@ public class Persona {
         return this.fechaNaciento;
     }
 
-    public void modificaTusDatos(String nombre, String APaterno, int edad, String nacionalidad, String fechaNacimiento,
-            String genero) {
-        this.nombre = nombre;
-        this.aPaterno = APaterno;
-        this.edad = edad;
-        this.nacionalidad = nacionalidad;
-        this.fechaNaciento = fechaNacimiento;
-        this.genero = genero;
-    }
 }

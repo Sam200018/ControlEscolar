@@ -1,6 +1,7 @@
 public class Curso {
     
     private Materia materia;
-    private Empleado profesor;
+    private Profesor profesor;
+    
 
 }

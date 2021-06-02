@@ -66,11 +66,4 @@ public class Empleado extends Persona {
         this.Puesto = Puesto;
     }
 
-    public void modificaTusDatos(String nombre, String APaterno, int edad, String nacionalidad, String fechaNacimiento,
-            String genero, int numeroEmp, double sueldo, String Puesto) {
-        super.modificaTusDatos(nombre, APaterno, edad, nacionalidad, fechaNacimiento, genero);
-        this.numeroEmp = numeroEmp;
-        this.sueldo = sueldo;
-        this.Puesto = Puesto;
-    }
 }

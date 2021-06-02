@@ -4,6 +4,7 @@ public class Alumno extends Persona {
     private int boleta, semestre;
     private double promedioGeneral, creditos;
     private String Carrera;
+    // private ArrayList<MatriaInscrita> matrias= new ArrayList<MateriaInscrita>();
 
     public Alumno(String nombre, String APaterno, int edad, String nacionalidad, String fechaNacimiento, String genero,
             int boleta, String Carrera, int semestre, double creditos, double promediogeneral) {
@@ -15,12 +16,11 @@ public class Alumno extends Persona {
         this.promedioGeneral = promediogeneral;
     }
 
-    public Alumno() {
-        boleta = 0;
-        semestre = 1;
-        Carrera = "Sistemas Computacionales";
-        creditos = 0;
-        promedioGeneral = 0;
+
+    private void calculaPromedio() {
+        // Aqui usaremos el promedio de cada materia inscrita en el arrayList y vamos a
+        // sacar el promedio y asignarno a 
+        //this.promedio=;
     }
 
     public void pideleAlUsuarioTusDatos() {
@@ -81,7 +81,7 @@ public class Alumno extends Persona {
         return this.creditos;
     }
 
-    public void modificaTusCraditos(double creditos) {
+    public void modificaTusCreditos(double creditos) {
         this.creditos = creditos;
     }
 
@@ -93,13 +93,4 @@ public class Alumno extends Persona {
         this.semestre = semestre;
     }
 
-    public void modificaTusDatos(String nombre, String APaterno, int edad, String nacionalidad, String fechaNacimiento,
-            String genero, int boleta, String Carrera, int semestre, double creditos, double promediogeneral) {
-        super.modificaTusDatos(nombre, APaterno, edad, nacionalidad, fechaNacimiento, genero);
-        this.boleta = boleta;
-        this.Carrera = Carrera;
-        this.semestre = semestre;
-        this.creditos = creditos;
-        this.promedioGeneral = promediogeneral;
-    }
 }
