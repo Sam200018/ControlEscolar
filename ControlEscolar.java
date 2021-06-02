@@ -1,5 +1,7 @@
 import java.util.Scanner;
 
+import javax.lang.model.util.ElementScanner6;
+
 public class ControlEscolar {
 
     public static void clearScreen() {  
@@ -173,30 +175,55 @@ public class ControlEscolar {
                 case 4:
                     do {
                         System.out.println("Curso");
-                        System.out.format("1.%s\n2.%s\n3.%s\n4.%s\n5.%s", "Alta Curso", "Baja curso",
-                                "Obtener Lista de cursos","Obtener Lista de inscritos en un grupo", "Salir al Menu princial");
+                        System.out.format("1.%s\n2.%s\n3.%s\n4.%s\n", "Alta Curso","Obtener Lista de cursos","Obtener Lista de inscritos en un grupo", "Salir al Menu princial");
                         System.out.println("\nIngrese una opcion");
                         opcion2 = op.nextInt();
+                        clearScreen();
+                        Scanner opAUX2 = new Scanner(System.in);
                         switch (opcion2) {
                             case 1:
                                 System.out.println("Alta Curso");
+                                int IDmat, IDprof, cupo;
+                                System.out.println("ID de la materia a vincular");
+                                IDmat = opAUX2.nextInt();
+                                System.out.println("ID del profesor a vincular");
+                                IDprof= opAUX2.nextInt();
+                                System.out.println("Límite de cupo");
+                                cupo = opAUX2.nextInt();
+                                Profesor pvinculo = Profesor.getProf(IDprof);
+                                Materia mvincu = Materia.getMateria(IDmat);
+                                if(pvinculo != null && mvincu != null){
+                                    Curso cnuevo = new Curso(mvincu, pvinculo, cupo);
+                                    mvincu.Addcurso(cnuevo);
+                                    pvinculo.Addcurso(cnuevo);
+                                }else
+                                System.out.println("ERROR EN LOS DATOS");
                                 break;
                             case 2:
-                                System.out.println("Baja curso");
+                                System.out.println("Lista de cursos");
+                                Curso.Lista();
                                 break;
                             case 3:
-                                System.out.println("Lista de cursos");
+                                System.out.println("Obtener Lista de inscritos en un grupo");
+                                System.out.println("ID del curso");
+                                int IDc = opAUX2.nextInt();
+                                Curso info = Curso.getCurso(IDc);
+                                if(info != null){
+                                    info.listaInscritos();
+                                }else
+                                System.out.println("ERROR EN LOS DATOS");
                                 break;
                             case 4:
-                                System.out.println("Obtener Lista de inscritos en un grupo");
-                                break;
-                            case 5:
                                 System.out.println("Salir al Menu principal");
                                 break;
                             default:
                                 System.out.println("Opcion no valida");
                                 break;
                         }
+                        System.out.println("Continuar[ENTER]");
+                        op.nextLine();
+                        op.nextLine();
+                        clearScreen();
                     } while (opcion2 != 4);
 
                     break;

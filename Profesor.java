@@ -66,4 +66,9 @@ public class Profesor extends Empleado{
         }
     }
 
+    public void Addcurso(Curso e){
+        CursosAcargo.add(e);
+    }
+
+
 }
