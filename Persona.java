@@ -48,7 +48,7 @@ public class Persona {
 
     public String toString() {
         return "Nombre: " + this.nombre + "\nAPaterno: " + this.aPaterno + "\nEdad: " + this.edad + "\nGenero: "
-                + this.genero + "\nFNacimiento: " + this.fechaNaciento + "\nNacionalidad" + this.nacionalidad;
+                + this.genero + "\nFNacimiento: " + this.fechaNaciento + "\nNacionalidad: " + this.nacionalidad;
     }
 
     public String dameTuNombre() {

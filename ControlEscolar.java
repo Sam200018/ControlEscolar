@@ -53,7 +53,6 @@ public class ControlEscolar {
                                 else
                                     System.out.println("ERROR Boleta no encontrada");
                                 break;
-
                             case 5:
                                 System.out.println("Salir al Menu principal");
                                 break;
@@ -98,7 +97,7 @@ public class ControlEscolar {
                                 System.out.println("Obtener profesor");
                                 System.out.println("Ingresa número de empleado: ");
                                 numEmp = op.nextInt();
-                                Profesor.getProf(numEmp);
+                                System.out.println(Profesor.getProf(numEmp));
                                 break;
 
                             case 5:
