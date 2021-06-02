@@ -10,7 +10,7 @@ public class Curso {
     private Profesor profesor;
     private int cupo;
     private int ID_curso;
-
+    
     private ArrayList<Inscripcion> alumnosInscritos;
     
     private static HashMap<Integer, Curso> ListaCursos;
@@ -61,6 +61,9 @@ public class Curso {
 
     public void setProfesor(Profesor profesor) {
         this.profesor = profesor;
+    }
+    public Profesor GetProfesor( ) {
+        return profesor;
     }
 
     public static void Almacenacurso(Curso nuevo){
