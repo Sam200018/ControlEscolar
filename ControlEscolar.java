@@ -65,11 +65,11 @@ public class ControlEscolar {
                                 System.out.println("Lista de profesores");
                                 break;
                             case 4:
-                                System.out.println("Obtener profesor de lista de profesores");
+                                System.out.println("Obtener profesor");
                                 break;
         
                             case 5:
-                                System.out.println("Obtener cursos");
+                                System.out.println("Obtener cursos de un profesor");
                                 break;
                             case 6:
                                 System.out.println("Salir al Menu principal");
