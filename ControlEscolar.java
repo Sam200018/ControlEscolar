@@ -122,19 +122,20 @@ public class ControlEscolar {
                 case 3:
                     do {
                         System.out.println("Materia");
-                        System.out.format("1.%s\n2.%s\n3.%s\n4.%s\n5.%s", "Alta Materias",
-                                "Obtener Lista de Materias", "Agrega grupos a una materia", "Salir al Menu princial");
+                        System.out.format("1.%s\n2.%s\n3.%s\n4.%s", "Alta Materias","Obtener Lista de Materias", "Agrega grupos a una materia", "Salir al Menu princial");
                         System.out.println("\nIngrese una opcion");
                         opcion2 = op.nextInt();
+                        clearScreen();
+                        Scanner opAUX = new Scanner(System.in);
                         switch (opcion2) {
                             case 1:
                                 System.out.println("Alta Materia");
                                 String nombre;
                                 System.out.println("Nombre de la materia");
-                                nombre = op.nextLine();
+                                nombre = opAUX.nextLine();
                                 int creditos;
                                 System.out.println("Creditos de la materia");
-                                creditos = op.nextInt();
+                                creditos = opAUX.nextInt();
                                 Materia nueva = new Materia(nombre, creditos);
                                 break;
                             case 2:
@@ -155,13 +156,17 @@ public class ControlEscolar {
                                 else
                                     System.out.println("ERROR ID  no encontrada");
                                 break;
-                            case 5:
+                            case 4:
                                 System.out.println("Salir al Menu principal");
                                 break;
                             default:
                                 System.out.println("Opcion no valida");
                                 break;
                         }
+                        System.out.println("Continuar[ENTER]");
+                        op.nextLine();
+                        op.nextLine();
+                        clearScreen();
                     } while (opcion2 != 4);
 
                     break;
