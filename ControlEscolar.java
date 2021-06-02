@@ -45,7 +45,6 @@ public class ControlEscolar {
                             case 4:
                                 System.out.println("Obtener alumno de lista de alumnos");
                                 break;
-
                             case 5:
                                 System.out.println("Salir al Menu principal");
                                 break;
@@ -55,7 +54,7 @@ public class ControlEscolar {
                         }
                         System.out.println("Continuar[ENTER]");
                         op.nextLine();
-                        op.nextLine();
+                        // op.nextLine();
                         clearScreen();
                     } while (opcion2 != 5);
 
