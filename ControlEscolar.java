@@ -8,8 +8,8 @@ public class ControlEscolar {
         Scanner op = new Scanner(System.in);
         System.out.println("Gestión escolar");
         do {
-            System.out.format("1.%s\n2.%s\n3.%s\n4.%s\n5.%s\n6.%s\n7.%s", "Alumnos", "Profesores", "Materias", "Grupos",
-                    "Curso", "Inscripciones", "Salir");
+            System.out.format("1.%s\n2.%s\n3.%s\n4.%s\n5.%s\n6.%s", "Alumnos", "Profesores", "Materias", "Curso",
+                    "Inscripciones", "Salir");
             System.out.println("\nIngrese una opcion");
             opcion = op.nextInt();
 
@@ -35,7 +35,7 @@ public class ControlEscolar {
                             case 4:
                                 System.out.println("Obtener alumno de lista de alumnos");
                                 break;
-                        
+
                             case 5:
                                 System.out.println("Salir al Menu principal");
                                 break;
@@ -51,7 +51,8 @@ public class ControlEscolar {
                     do {
                         System.out.println("Profesor");
                         System.out.format("1.%s\n2.%s\n3.%s\n4.%s\n5.%s\n6.%s", "Alta profesor", "baja profesor",
-                                "Obtener Lista de profesores", "Obtener profesor","Obtener cursos", "Salir al Menu princial");
+                                "Obtener Lista de profesores", "Obtener profesor", "Obtener cursos",
+                                "Salir al Menu princial");
                         System.out.println("\nIngrese una opcion");
                         opcion2 = op.nextInt();
                         switch (opcion2) {
@@ -67,7 +68,7 @@ public class ControlEscolar {
                             case 4:
                                 System.out.println("Obtener profesor");
                                 break;
-        
+
                             case 5:
                                 System.out.println("Obtener cursos de un profesor");
                                 break;
@@ -81,8 +82,70 @@ public class ControlEscolar {
                     } while (opcion2 != 6);
 
                     break;
+                case 3:
+                    do {
+                        System.out.println("Materia");
+                        System.out.format("1.%s\n2.%s\n3.%s\n4.%s", "Alta Materias", "baja Materias",
+                                "Obtener Lista de Materias", "Salir al Menu princial");
+                        System.out.println("\nIngrese una opcion");
+                        opcion2 = op.nextInt();
+                        switch (opcion2) {
+                            case 1:
+                                System.out.println("Alta Materia");
+                                break;
+                            case 2:
+                                System.out.println("Baja Materia");
+                                break;
+                            case 3:
+                                System.out.println("Lista de Materias");
+                                break;
+                            case 4:
+                                System.out.println("Salir al Menu principal");
+                                break;
+                            default:
+                                System.out.println("Opcion no valida");
+                                break;
+                        }
+                    } while (opcion2 != 4);
 
-                case 7:
+                    break;
+                case 4:
+                    do {
+                        System.out.println("Curso");
+                        System.out.format("1.%s\n2.%s\n3.%s\n4.%s\n5.%s", "Alta Curso", "Baja curso",
+                                "Obtener Lista de cursos","Obtener Lista de inscritos en un grupo", "Salir al Menu princial");
+                        System.out.println("\nIngrese una opcion");
+                        opcion2 = op.nextInt();
+                        switch (opcion2) {
+                            case 1:
+                                System.out.println("Alta Curso");
+                                break;
+                            case 2:
+                                System.out.println("Baja curso");
+                                break;
+                            case 3:
+                                System.out.println("Lista de cursos");
+                                break;
+                            case 4:
+                                System.out.println("Obtener Lista de inscritos en un grupo");
+                                break;
+                            case 5:
+                                System.out.println("Salir al Menu principal");
+                                break;
+                            default:
+                                System.out.println("Opcion no valida");
+                                break;
+                        }
+                    } while (opcion2 != 4);
+
+                    break;
+                case 5:
+                        System.out.println("Inscribir Alumno");
+                        
+
+                    break;
+
+                case 6:
                     System.out.println("\nFin...calificacion final 10");
                     break;
                 default:
@@ -90,10 +153,7 @@ public class ControlEscolar {
                     break;
             }
 
-        } while (opcion != 7);
-
-
-
+        } while (opcion != 6);
 
         op.close();
     }
