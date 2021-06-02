@@ -1,5 +1,3 @@
-import java.lang.reflect.Array;
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Alumno extends Persona {
@@ -90,7 +88,7 @@ public class Alumno extends Persona {
         return this.creditos;
     }
 
-    public void modificaTusCraditos(double creditos) {
+    public void modificaTusCreditos(double creditos) {
         this.creditos = creditos;
     }
 
