@@ -2,6 +2,10 @@ import java.util.Scanner;
 
 public class ControlEscolar {
 
+    public static void clearScreen() {  
+        System.out.print("\033[H\033[2J");  
+        System.out.flush();  
+    }  
     public static void main(String[] args) {
         int opcion;
         int opcion2;
@@ -12,7 +16,7 @@ public class ControlEscolar {
                     "Inscripciones", "Salir");
             System.out.println("\nIngrese una opcion");
             opcion = op.nextInt();
-
+            clearScreen();
             switch (opcion) {
                 case 1:
                     do {
@@ -21,16 +25,22 @@ public class ControlEscolar {
                                 "Obtener Lista de alumnos", "Obtener alumno", "Salir al Menu princial");
                         System.out.println("\nIngrese una opcion");
                         opcion2 = op.nextInt();
-
+                        clearScreen();
                         switch (opcion2) {
                             case 1:
                                 System.out.println("Alta alumno");
+                                Alumno nuevo = new Alumno();
                                 break;
                             case 2:
                                 System.out.println("Baja alumno");
+                                int boleta;
+                                System.out.println("Ingresa la boleta del alumno: ");
+                                boleta = op.nextInt();
+                                Alumno.EliminaAlumno(boleta);
                                 break;
                             case 3:
                                 System.out.println("Lista de alumnos");
+                                Alumno.Lista();
                                 break;
                             case 4:
                                 System.out.println("Obtener alumno de lista de alumnos");
@@ -43,7 +53,10 @@ public class ControlEscolar {
                                 System.out.println("Opcion no valida");
                                 break;
                         }
-
+                        System.out.println("Continuar[ENTER]");
+                        op.nextLine();
+                        op.nextLine();
+                        clearScreen();
                     } while (opcion2 != 5);
 
                     break;
@@ -152,7 +165,9 @@ public class ControlEscolar {
                     System.out.println("\nOpcion no valida ");
                     break;
             }
-
+            System.out.println("Continuar[ENTER]");
+            op.nextLine();
+            clearScreen();
         } while (opcion != 6);
 
         op.close();

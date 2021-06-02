@@ -19,6 +19,9 @@ public class Alumno extends Persona {
     public Alumno(){
         pideleAlUsuarioTusDatos();
         boleta = generaBoleta();
+        creditos = 0;
+        promedioGeneral = 0.0;
+        semestre = 1;
         AlmacenaAlumno(this);
     }
 
@@ -37,17 +40,8 @@ public class Alumno extends Persona {
     public void pideleAlUsuarioTusDatos() {
         super.pideleAlUsuarioTusDatos();
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Ingrese la boleta del alumno");
-        this.boleta = Integer.parseInt(scanner.nextLine());
         System.out.println("Ingrese la carrera del alumno");
         this.Carrera = scanner.nextLine();
-        System.out.println("Ingrese el semestre que cursa el alumno");
-        this.semestre = Integer.parseInt(scanner.nextLine());
-        System.out.println("Ingrese el numero de creditos del alumno(0.0)");
-        this.creditos = Double.parseDouble(scanner.nextLine());
-        System.out.println("Ingrese el promedio general del alumno(0.0)");
-        this.promedioGeneral = Double.parseDouble(scanner.nextLine());
-        scanner.close();
     }
 
     @Override
@@ -57,7 +51,6 @@ public class Alumno extends Persona {
         System.out.println("Carrera: " + this.Carrera);
         System.out.println("Promedio General: " + this.promedioGeneral);
         System.out.println("No. Creditos: " + this.creditos);
-        System.out.println("Semestre actual: " + this.semestre);
     }
 
     @Override
@@ -116,8 +109,10 @@ public class Alumno extends Persona {
 
     public static void EliminaAlumno(int boleta){
         Alumno alumnoBorrar = ListaAlumnos.get(boleta);
-        if(alumnoBorrar != null)
+        if(alumnoBorrar != null){
             ListaAlumnos.remove(boleta);
+            System.out.println("Alumno eliminado con éxito");
+        }
         else
             System.out.println("Boleta no encontrada");
     }
@@ -127,7 +122,7 @@ public class Alumno extends Persona {
         while(iterador.hasNext()){
             Map.Entry par = (Map.Entry)iterador.next();
             Alumno A = (Alumno)  par.getValue();
-            System.out.println(A);
+            System.out.println(A + "\n\n");
         }
     }
 
