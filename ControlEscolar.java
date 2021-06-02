@@ -122,7 +122,7 @@ public class ControlEscolar {
                 case 3:
                     do {
                         System.out.println("Materia");
-                        System.out.format("1.%s\n2.%s\n3.%s\n4.%s\n5.%s", "Alta Materias",
+                        System.out.format("1.%s\n2.%s\n3.%s\n4.%s", "Alta Materias",
                                 "Obtener Lista de Materias", "Agrega grupos a una materia", "Salir al Menu princial");
                         System.out.println("\nIngrese una opcion");
                         opcion2 = op.nextInt();
