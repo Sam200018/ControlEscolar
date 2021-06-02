@@ -31,6 +31,7 @@ public class ControlEscolar {
                             case 1:
                                 System.out.println("Alta alumno");
                                 Alumno nuevo = new Alumno();
+                                System.out.println("Alta con éxito");
                                 break;
                             case 2:
                                 System.out.println("Baja alumno");
@@ -78,9 +79,14 @@ public class ControlEscolar {
                         switch (opcion2) {
                             case 1:
                                 System.out.println("Alta profesor");
+                                Profesor nuevo = new Profesor();
+                                System.out.println("Alta con éxito");
                                 break;
                             case 2:
                                 System.out.println("Baja profesor");
+                                System.out.println("Ingresa la boleta del alumno: ");
+                                boleta = op.nextInt();
+                                Alumno.EliminaAlumno(boleta);
                                 break;
                             case 3:
                                 System.out.println("Lista de profesores");
