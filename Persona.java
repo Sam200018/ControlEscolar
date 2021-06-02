@@ -16,8 +16,8 @@ public class Persona {
         this.genero = genero;
     }
 
-    public Persona(){
-        
+    public Persona() {
+
     }
 
     public void pideleAlUsuarioTusDatos() {
@@ -29,12 +29,12 @@ public class Persona {
         System.out.println("Introduce la edad");
         this.edad = Integer.parseInt(scanner.nextLine());
         System.out.println("Introduce el genero");
-        this.genero=scanner.nextLine();
+        this.genero = scanner.nextLine();
         System.out.println("Introduce la nacionalidad");
         this.nacionalidad = scanner.nextLine();
         System.out.println("Introduce la fecha de nacimiento(aaaa-mm-dd)");
         this.fechaNaciento = scanner.nextLine();
-        
+
     }
 
     public void muestraTusDatos() {
@@ -44,6 +44,11 @@ public class Persona {
         System.out.println("Genero: " + this.genero);
         System.out.println("FNacimiento: " + this.fechaNaciento);
         System.out.println("Nacionalidad: " + this.nacionalidad);
+    }
+
+    public String toString() {
+        return "Nombre: " + this.nombre + "\nAPaterno: " + this.aPaterno + "\nEdad: " + this.edad + "\nGenero: "
+                + this.genero + "\nFNacimiento: " + this.fechaNaciento + "\nNacionalidad" + this.nacionalidad;
     }
 
     public String dameTuNombre() {
@@ -70,28 +75,28 @@ public class Persona {
         this.genero = Genero;
     }
 
-    public Integer dameTuEdad(){
+    public Integer dameTuEdad() {
         return this.edad;
     }
 
-    public void cambiaEdad(int edad){
-        this.edad=edad;
+    public void cambiaEdad(int edad) {
+        this.edad = edad;
     }
 
-    public String dameTuNacionalidad(){
+    public String dameTuNacionalidad() {
         return this.nacionalidad;
     }
 
-    public void cambiaTuNacionalidad(String Nacionalidad){
-        this.nacionalidad=Nacionalidad;
+    public void cambiaTuNacionalidad(String Nacionalidad) {
+        this.nacionalidad = Nacionalidad;
     }
 
-    public String dameTuFNacimiento(){
+    public String dameTuFNacimiento() {
         return this.fechaNaciento;
     }
 
     public void modificaTusDatos(String nombre, String APaterno, int edad, String nacionalidad, String fechaNacimiento,
-    String genero){
+            String genero) {
         this.nombre = nombre;
         this.aPaterno = APaterno;
         this.edad = edad;

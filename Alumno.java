@@ -48,6 +48,11 @@ public class Alumno extends Persona {
         System.out.println("Semestre actual: " + this.semestre);
     }
 
+    public String toString() {
+        return super.toString() + "\nBoleta: " + this.boleta + "\nCarrera: " + this.Carrera + "\nPrmedio general: "
+                + this.promedioGeneral + "\nNo. de Creditos: " + this.creditos + "\nSemestre Actual: " + this.semestre;
+    }
+
     public int dameTuBoleta() {
         return this.boleta;
     }
@@ -60,36 +65,36 @@ public class Alumno extends Persona {
         return this.Carrera;
     }
 
-    public void modificaTuCarrera(String Carrera){
-        this.Carrera=Carrera;
+    public void modificaTuCarrera(String Carrera) {
+        this.Carrera = Carrera;
     }
 
-    public double dameTuPromedioG(){
+    public double dameTuPromedioG() {
         return this.promedioGeneral;
-    } 
-
-    public void modificaTuPromedio(double promedioGeneral){
-        this.promedioGeneral=promedioGeneral;
     }
 
-    public double dameTusCreditos(){
+    public void modificaTuPromedio(double promedioGeneral) {
+        this.promedioGeneral = promedioGeneral;
+    }
+
+    public double dameTusCreditos() {
         return this.creditos;
     }
 
-    public void modificaTusCraditos(double creditos){
-        this.creditos= creditos;
+    public void modificaTusCraditos(double creditos) {
+        this.creditos = creditos;
     }
 
-    public int dameTuSemestre(){
+    public int dameTuSemestre() {
         return this.semestre;
     }
 
-    public void modificaTuSemestre(int semestre){
-        this.semestre=semestre;
+    public void modificaTuSemestre(int semestre) {
+        this.semestre = semestre;
     }
 
-    public void modificaTusDatos(String nombre, String APaterno, int edad, String nacionalidad, String fechaNacimiento, String genero,
-    int boleta, String Carrera, int semestre, double creditos, double promediogeneral){
+    public void modificaTusDatos(String nombre, String APaterno, int edad, String nacionalidad, String fechaNacimiento,
+            String genero, int boleta, String Carrera, int semestre, double creditos, double promediogeneral) {
         super.modificaTusDatos(nombre, APaterno, edad, nacionalidad, fechaNacimiento, genero);
         this.boleta = boleta;
         this.Carrera = Carrera;
