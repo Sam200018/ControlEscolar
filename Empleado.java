@@ -48,10 +48,6 @@ public class Empleado extends Persona {
                 + this.Puesto;
     }
 
-    public int dameTuNoEmpleado() {
-        return this.numeroEmp;
-    }
-
     public void modificaTuNoEmp(int numeroEmp) {
         this.numeroEmp = numeroEmp;
     }
