@@ -35,7 +35,7 @@ public class Profesor extends Empleado{
     public static Profesor getProf(int numE){
         return ListaProfesores.get(numE);
     }
-    public static void EliminaAlumno(int numE){
+    public static void EliminaProfesor(int numE){
         Profesor profesorBorrar = ListaProfesores.get(numE);
         if(profesorBorrar != null)
             ListaProfesores.remove(numE);

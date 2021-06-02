@@ -6,9 +6,10 @@ public class Empleado extends Persona {
     private String Puesto;
     private static int size;
 
-    static{
+    static {
         size = 0;
     }
+
     public Empleado() {
         size++;
         numeroEmp = size;
@@ -69,10 +70,6 @@ public class Empleado extends Persona {
 
     public void modificaTuPuesto(String Puesto) {
         this.Puesto = Puesto;
-    }
-
-    public int getNumeroEmp() {
-        return numeroEmp;
     }
 
 }
