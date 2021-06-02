@@ -62,7 +62,7 @@ public class ControlEscolar {
                         }
                         System.out.println("Continuar[ENTER]");
                         op.nextLine();
-                        // op.nextLine();
+                        op.nextLine();
                         clearScreen();
                     } while (opcion2 != 5);
 
