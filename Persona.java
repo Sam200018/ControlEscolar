@@ -6,7 +6,7 @@ public class Persona {
     protected String nombre, aPaterno, nacionalidad, genero;
     protected int edad;
 
-    public Persona(String id, String nombre, String APaterno, int edad, String nacionalidad, String fechaNacimiento,
+    public Persona(String nombre, String APaterno, int edad, String nacionalidad, String fechaNacimiento,
             String genero) {
         this.nombre = nombre;
         this.aPaterno = APaterno;
@@ -88,5 +88,15 @@ public class Persona {
 
     public String dameTuFNacimiento(){
         return this.fechaNaciento;
+    }
+
+    public void modificaTusDatos(String nombre, String APaterno, int edad, String nacionalidad, String fechaNacimiento,
+    String genero){
+        this.nombre = nombre;
+        this.aPaterno = APaterno;
+        this.edad = edad;
+        this.nacionalidad = nacionalidad;
+        this.fechaNaciento = fechaNacimiento;
+        this.genero = genero;
     }
 }
