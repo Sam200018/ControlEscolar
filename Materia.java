@@ -5,7 +5,7 @@ import java.util.Map;
 public class Materia{
 
     private String nombre;
-    private int ID;
+    private Integer ID;
     private int creditos;
 
     private ArrayList<Curso> cursosOfertados;
@@ -28,9 +28,9 @@ public class Materia{
         cursosOfertados = new ArrayList<>();
         AlmacenaMateria(this);
     }
-    public Materia(String nombre, int ID, int creditos, ArrayList<Curso>cursos){
+    public Materia(String nombre,int creditos, ArrayList<Curso>cursos){
         this.nombre = nombre;
-        this.ID = ID;
+        ID = generaID();
         this.creditos = creditos;
         cursosOfertados = cursos;
         AlmacenaMateria(this);
@@ -45,7 +45,7 @@ public class Materia{
     public int getID() {
         return ID;
     }
-    public void setID(int iD) {
+    public void setID(Integer iD) {
         ID = iD;
     }
     public void setCreditos(int creditos) {
@@ -61,7 +61,7 @@ public class Materia{
         return cursosOfertados;
     }
 
-    public int generaID(){
+    public Integer generaID(){
         return ListaMaterias.size() + 1;
     }
 
