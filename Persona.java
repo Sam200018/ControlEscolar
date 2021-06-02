@@ -30,11 +30,11 @@ public class Persona {
         this.edad = Integer.parseInt(scanner.nextLine());
         System.out.println("Introduce el genero");
         this.genero=scanner.nextLine();
-        System.out.println("Introduce la nacionalodad");
+        System.out.println("Introduce la nacionalidad");
         this.nacionalidad = scanner.nextLine();
         System.out.println("Introduce la fecha de nacimiento(aaaa-mm-dd)");
         this.fechaNaciento = scanner.nextLine();
-        scanner.close();
+        
     }
 
     public void muestraTusDatos() {
