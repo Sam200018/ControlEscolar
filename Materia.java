@@ -5,12 +5,17 @@ import java.util.Map;
 public class Materia{
 
     private String nombre;
-    private Integer ID;
+    private int ID;
     private int creditos;
 
     private ArrayList<Curso> cursosOfertados;
 
     private static HashMap<Integer, Materia> ListaMaterias;
+
+
+    static{
+        ListaMaterias = new HashMap<>();
+    }
 
     public String toString(){
         String info = "";
@@ -45,7 +50,7 @@ public class Materia{
     public int getID() {
         return ID;
     }
-    public void setID(Integer iD) {
+    public void setID(int iD) {
         ID = iD;
     }
     public void setCreditos(int creditos) {
@@ -61,12 +66,16 @@ public class Materia{
         return cursosOfertados;
     }
 
-    public Integer generaID(){
+    public int generaID(){
         return ListaMaterias.size() + 1;
     }
 
     public static void AlmacenaMateria(Materia nuevo){
         ListaMaterias.put(nuevo.getID(), nuevo);
+    }
+
+    public void Addcurso(Curso e){
+        cursosOfertados.add(e);
     }
 
     
@@ -77,6 +86,10 @@ public class Materia{
             Materia A = (Materia)  par.getValue();
             System.out.println(A);
         }
+    }
+
+    public static Materia getMateria(int ID){
+        return ListaMaterias.get(ID);
     }
 
 }

@@ -7,9 +7,13 @@ public class Profesor extends Empleado{
     private ArrayList<Curso> CursosAcargo;
     private static HashMap<Integer, Profesor> ListaProfesores;
 
+    
+    static{
+        ListaProfesores = new HashMap<>();
+    }
 
     public Profesor(){
-        super.pideleAlUsuarioTusDatos();
+        super();
         CursosAcargo = new ArrayList<>();
         AlmacenaProfesores(this);
     }

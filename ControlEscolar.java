@@ -123,21 +123,40 @@ public class ControlEscolar {
                 case 3:
                     do {
                         System.out.println("Materia");
-                        System.out.format("1.%s\n2.%s\n3.%s\n4.%s", "Alta Materias", "baja Materias",
-                                "Obtener Lista de Materias", "Salir al Menu princial");
+                        System.out.format("1.%s\n2.%s\n3.%s\n4.%s\n5.%s", "Alta Materias",
+                                "Obtener Lista de Materias", "Agrega grupos a una materia", "Salir al Menu princial");
                         System.out.println("\nIngrese una opcion");
                         opcion2 = op.nextInt();
                         switch (opcion2) {
                             case 1:
                                 System.out.println("Alta Materia");
+                                String nombre;
+                                System.out.println("Nombre de la materia");
+                                nombre = op.nextLine();
+                                int creditos;
+                                System.out.println("Creditos de la materia");
+                                creditos = op.nextInt();
+                                Materia nueva = new Materia(nombre, creditos);
                                 break;
                             case 2:
-                                System.out.println("Baja Materia");
+                                System.out.println("Lista de Materias");
+                                Materia.Lista();
                                 break;
                             case 3:
-                                System.out.println("Lista de Materias");
+                                System.out.println("Agrega grupos a una materia");
+                                System.out.println("ID de la materia a vincular");
+                                int IDmateria = op.nextInt();
+                                Materia vincular = Materia.getMateria(IDmateria);
+                                System.out.println("ID del curso a agregar");
+                                int IDcurso = op.nextInt();
+                                Curso anexar = Curso.getCurso(IDcurso);
+                                if(anexar != null && vincular != null){
+                                    vincular.Addcurso(anexar);
+                                }
+                                else
+                                    System.out.println("ERROR ID  no encontrada");
                                 break;
-                            case 4:
+                            case 5:
                                 System.out.println("Salir al Menu principal");
                                 break;
                             default:

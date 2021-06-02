@@ -96,4 +96,8 @@ public class Curso {
         }
     }
 
+    public static Curso getCurso(int ID){
+        return ListaCursos.get(ID);
+    }
+
 }

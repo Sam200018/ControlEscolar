@@ -11,11 +11,9 @@ public class Empleado extends Persona {
     }
 
     public Empleado() {
+        pideleAlUsuarioTusDatos();
         size++;
         numeroEmp = size;
-        sueldo = 0;
-        Puesto = " ";
-
     }
 
     public Empleado(String nombre, String APaterno, int edad, String nacionalidad, String fechaNacimiento,
