@@ -23,8 +23,8 @@ public class Curso {
         this.profesor = profesor;
         this.cupo = cupo;
         ID_curso = getID();
-
         alumnosInscritos = new ArrayList<>();
+        Almacenacurso(this);
     }
 
     public List<Inscripcion> getAlumnosInscritos() {
@@ -62,6 +62,10 @@ public class Curso {
 
     public static void Almacenacurso(Curso nuevo){
         ListaCursos.put(nuevo.ID_curso, nuevo);
+    }
+
+    public void AgregaAlumno(Inscripcion nuevo){
+        alumnosInscritos.add(nuevo);
     }
 
 }

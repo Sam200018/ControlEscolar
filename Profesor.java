@@ -1,19 +1,14 @@
-import java.util.List;
+import java.util.ArrayList;
 
 public class Profesor extends Empleado{
-    private List<Curso> CursosAcargo;
+    private ArrayList<Curso> CursosAcargo;
 
     public Profesor(String nombre, String APaterno, int edad, String nacionalidad, String fechaNacimiento,
     String genero, int numeroEmp, double sueldo, String Puesto){
         super(nombre, APaterno, edad, nacionalidad, fechaNacimiento, genero, numeroEmp, sueldo, Puesto);
-
+        CursosAcargo = new ArrayList<>();
     }
-    public Profesor(String nombre, String APaterno, int edad, String nacionalidad, String fechaNacimiento,
-    String genero, int numeroEmp, double sueldo, String Puesto, List<Curso> Cursos){
-        super(nombre, APaterno, edad, nacionalidad, fechaNacimiento, genero, numeroEmp, sueldo, Puesto);
-        CursosAcargo = Cursos;
-    }
-
+ 
     public void pideleAlUsuarioTusDatos(){
         super.pideleAlUsuarioTusDatos();
     }

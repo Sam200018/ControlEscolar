@@ -1,27 +1,30 @@
 import java.util.Scanner;
+import java.util.HashMap;
 
 public class Alumno extends Persona {
     private int boleta, semestre;
     private double promedioGeneral, creditos;
     private String Carrera;
+
+    private static HashMap<Integer, Alumno> ListaAlumnos;
+
+
+    static{
+        ListaAlumnos = new HashMap<>();
+    }
     // private ArrayList<MatriaInscrita> matrias= new ArrayList<MateriaInscrita>();
 
-    public Alumno(String nombre, String APaterno, int edad, String nacionalidad, String fechaNacimiento, String genero,
-            int boleta, String Carrera, int semestre, double creditos, double promediogeneral) {
+    public Alumno(String nombre, String APaterno, int edad, String nacionalidad, String fechaNacimiento, String genero, String Carrera, int semestre, double creditos, double promediogeneral) {
         super(nombre, APaterno, edad, nacionalidad, fechaNacimiento, genero);
-        this.boleta = boleta;
         this.Carrera = Carrera;
         this.semestre = semestre;
         this.creditos = creditos;
         this.promedioGeneral = promediogeneral;
+        boleta = generaBoleta();
+        AlmacenaAlumno(this);
     }
 
 
-    private void calculaPromedio() {
-        // Aqui usaremos el promedio de cada materia inscrita en el arrayList y vamos a
-        // sacar el promedio y asignarno a 
-        //this.promedio=;
-    }
 
     public void pideleAlUsuarioTusDatos() {
         super.pideleAlUsuarioTusDatos();
@@ -91,6 +94,14 @@ public class Alumno extends Persona {
 
     public void modificaTuSemestre(int semestre) {
         this.semestre = semestre;
+    }
+    
+    public int generaBoleta(){
+        return ListaAlumnos.size() + 1;
+    }
+
+    public static void AlmacenaAlumno(Alumno nuevo){
+        ListaAlumnos.put(nuevo.boleta, nuevo);
     }
 
 }

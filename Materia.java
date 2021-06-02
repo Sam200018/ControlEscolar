@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.List;
 
 public class Materia{
 
@@ -7,7 +6,7 @@ public class Materia{
     private int ID;
     private int creditos;
 
-    private List<Curso> cursosOfertados;
+    private ArrayList<Curso> cursosOfertados;
 
     public Materia(String nombre, int ID, int creditos){
         this.nombre = nombre;
@@ -15,7 +14,7 @@ public class Materia{
         this.creditos = creditos;
         cursosOfertados = new ArrayList<>();
     }
-    public Materia(String nombre, int ID, int creditos, List<Curso>cursos){
+    public Materia(String nombre, int ID, int creditos, ArrayList<Curso>cursos){
         this.nombre = nombre;
         this.ID = ID;
         this.creditos = creditos;
@@ -40,10 +39,10 @@ public class Materia{
     public int getCreditos() {
         return creditos;
     }
-    public void setCursosOfertados(List<Curso> cursosOfertados) {
+    public void setCursosOfertados(ArrayList<Curso> cursosOfertados) {
         this.cursosOfertados = cursosOfertados;
     }
-    public List<Curso> getCursosOfertados() {
+    public ArrayList<Curso> getCursosOfertados() {
         return cursosOfertados;
     }
 
