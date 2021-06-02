@@ -126,4 +126,8 @@ public class Alumno extends Persona {
         }
     }
 
+    public static Alumno getAlumno(int boletaa){
+        return ListaAlumnos.get(boletaa);
+    }
+
 }

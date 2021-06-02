@@ -8,6 +8,12 @@ public class Profesor extends Empleado{
     private static HashMap<Integer, Profesor> ListaProfesores;
 
 
+    public Profesor(){
+        super.pideleAlUsuarioTusDatos();
+        CursosAcargo = new ArrayList<>();
+        AlmacenaProfesores(this);
+    }
+
     public Profesor(String nombre, String APaterno, int edad, String nacionalidad, String fechaNacimiento,
     String genero, int numeroEmp, double sueldo, String Puesto){
         super(nombre, APaterno, edad, nacionalidad, fechaNacimiento, genero, numeroEmp, sueldo, Puesto);

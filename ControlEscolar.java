@@ -19,6 +19,7 @@ public class ControlEscolar {
             clearScreen();
             switch (opcion) {
                 case 1:
+                int boleta;
                     do {
                         System.out.println("Alumno");
                         System.out.format("1.%s\n2.%s\n3.%s\n4.%s\n5.%s", "Alta alumno", "baja alumno",
@@ -30,10 +31,10 @@ public class ControlEscolar {
                             case 1:
                                 System.out.println("Alta alumno");
                                 Alumno nuevo = new Alumno();
+                                System.out.println("Alta con éxito");
                                 break;
                             case 2:
                                 System.out.println("Baja alumno");
-                                int boleta;
                                 System.out.println("Ingresa la boleta del alumno: ");
                                 boleta = op.nextInt();
                                 Alumno.EliminaAlumno(boleta);
@@ -44,6 +45,13 @@ public class ControlEscolar {
                                 break;
                             case 4:
                                 System.out.println("Obtener alumno de lista de alumnos");
+                                System.out.println("Ingresa la boleta del alumno: ");
+                                boleta = op.nextInt();
+                                Alumno info = Alumno.getAlumno(boleta);
+                                if(info != null)
+                                    System.out.println(info);
+                                else
+                                    System.out.println("ERROR Boleta no encontrada");
                                 break;
                             case 5:
                                 System.out.println("Salir al Menu principal");
@@ -70,9 +78,14 @@ public class ControlEscolar {
                         switch (opcion2) {
                             case 1:
                                 System.out.println("Alta profesor");
+                                Profesor nuevo = new Profesor();
+                                System.out.println("Alta con éxito");
                                 break;
                             case 2:
                                 System.out.println("Baja profesor");
+                                System.out.println("Ingresa la boleta del alumno: ");
+                                boleta = op.nextInt();
+                                Alumno.EliminaAlumno(boleta);
                                 break;
                             case 3:
                                 System.out.println("Lista de profesores");
