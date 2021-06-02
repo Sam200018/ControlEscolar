@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Materia{
 
@@ -8,17 +9,22 @@ public class Materia{
 
     private ArrayList<Curso> cursosOfertados;
 
-    public Materia(String nombre, int ID, int creditos){
+    private static HashMap<Integer, Materia> ListaMaterias;
+
+
+    public Materia(String nombre, int creditos){
         this.nombre = nombre;
-        this.ID = ID;
+        ID = generaID();
         this.creditos = creditos;
         cursosOfertados = new ArrayList<>();
+        AlmacenaMateria(this);
     }
     public Materia(String nombre, int ID, int creditos, ArrayList<Curso>cursos){
         this.nombre = nombre;
         this.ID = ID;
         this.creditos = creditos;
         cursosOfertados = cursos;
+        AlmacenaMateria(this);
     }
 
     public String getNombre() {
@@ -44,6 +50,14 @@ public class Materia{
     }
     public ArrayList<Curso> getCursosOfertados() {
         return cursosOfertados;
+    }
+
+    public int generaID(){
+        return ListaMaterias.size() + 1;
+    }
+
+    public static void AlmacenaMateria(Materia nuevo){
+        ListaMaterias.put(nuevo.getID(), nuevo);
     }
 
 }

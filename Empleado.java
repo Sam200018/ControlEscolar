@@ -4,17 +4,24 @@ public class Empleado extends Persona {
     private int numeroEmp;
     private double sueldo;
     private String Puesto;
+    private static int size;
 
+    static{
+        size = 0;
+    }
     public Empleado() {
-        numeroEmp = 1;
+        size++;
+        numeroEmp = size;
         sueldo = 0;
         Puesto = " ";
+
     }
 
     public Empleado(String nombre, String APaterno, int edad, String nacionalidad, String fechaNacimiento,
             String genero, int numeroEmp, double sueldo, String Puesto) {
         super(nombre, APaterno, edad, nacionalidad, fechaNacimiento, genero);
-        this.numeroEmp = numeroEmp;
+        size++;
+        numeroEmp = size;
         this.sueldo = sueldo;
         this.Puesto = Puesto;
     }
@@ -22,8 +29,6 @@ public class Empleado extends Persona {
     public void pideleAlUsuarioTusDatos() {
         super.pideleAlUsuarioTusDatos();
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Ingrese el numero de empleado");
-        this.numeroEmp = Integer.parseInt(scanner.nextLine());
         System.out.println("Ingrese el sueldo de empleado");
         this.sueldo = Double.parseDouble(scanner.nextLine());
         System.out.println("Ingrese el puesto de empleado");
@@ -64,6 +69,10 @@ public class Empleado extends Persona {
 
     public void modificaTuPuesto(String Puesto) {
         this.Puesto = Puesto;
+    }
+
+    public int getNumeroEmp() {
+        return numeroEmp;
     }
 
 }
