@@ -75,6 +75,8 @@ public class ControlEscolar {
                                 "Salir al Menu princial");
                         System.out.println("\nIngrese una opcion");
                         opcion2 = op.nextInt();
+                        int numEmp;
+                        clearScreen();
                         switch (opcion2) {
                             case 1:
                                 System.out.println("Alta profesor");
@@ -83,19 +85,26 @@ public class ControlEscolar {
                                 break;
                             case 2:
                                 System.out.println("Baja profesor");
-                                System.out.println("Ingresa la boleta del alumno: ");
-                                boleta = op.nextInt();
-                                Alumno.EliminaAlumno(boleta);
+                                System.out.println("Ingresa número de empleado: ");
+                                numEmp = op.nextInt();
+                                Profesor.EliminaProfesor(numEmp);
                                 break;
                             case 3:
                                 System.out.println("Lista de profesores");
+                                Profesor.Lista();
                                 break;
                             case 4:
                                 System.out.println("Obtener profesor");
+                                System.out.println("Ingresa número de empleado: ");
+                                numEmp = op.nextInt();
+                                Profesor.getProf(numEmp);
                                 break;
 
                             case 5:
                                 System.out.println("Obtener cursos de un profesor");
+                                System.out.println("Ingresa número de empleado: ");
+                                numEmp = op.nextInt();
+                                Profesor.getProf(numEmp).gruposAcargo();
                                 break;
                             case 6:
                                 System.out.println("Salir al Menu principal");
@@ -104,8 +113,11 @@ public class ControlEscolar {
                                 System.out.println("Opcion no valida");
                                 break;
                         }
+                        System.out.println("Continuar[ENTER]");
+                        op.nextLine();
+                        op.nextLine();
+                        clearScreen();
                     } while (opcion2 != 6);
-
                     break;
                 case 3:
                     do {
