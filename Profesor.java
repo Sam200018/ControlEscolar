@@ -18,6 +18,10 @@ public class Profesor extends Empleado{
         this.grupos=grupos;
     }
 
+    public void pideleAlUsuarioTusDatos(){
+        super.pideleAlUsuarioTusDatos();
+    }
+
     public void agregarGrupo(Grupo G){
         grupos.add(g);
     }
@@ -39,6 +43,6 @@ public class Profesor extends Empleado{
         grupos.clear();
     }
 
-    
+
 
 }

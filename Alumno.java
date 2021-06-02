@@ -1,9 +1,12 @@
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Alumno extends Persona {
     private int boleta, semestre;
     private double promedioGeneral, creditos;
     private String Carrera;
+    // private ArrayList<MatriaInscrita> matrias= new ArrayList<MateriaInscrita>();
 
     public Alumno(String nombre, String APaterno, int edad, String nacionalidad, String fechaNacimiento, String genero,
             int boleta, String Carrera, int semestre, double creditos, double promediogeneral) {
@@ -21,6 +24,12 @@ public class Alumno extends Persona {
         Carrera = "Sistemas Computacionales";
         creditos = 0;
         promedioGeneral = 0;
+    }
+
+    private void calculaPromedio() {
+        // Aqui usaremos el promedio de cada materia inscrita en el arrayList y vamos a
+        // sacar el promedio y asignarno a 
+        //this.promedio=;
     }
 
     public void pideleAlUsuarioTusDatos() {
